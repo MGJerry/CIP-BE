@@ -1,0 +1,6 @@
+@CIP_HostAddress = http://localhost:5207
+
+GET {{CIP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

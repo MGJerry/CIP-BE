@@ -1,0 +1,15 @@
+version: '3.8'  # Use an appropriate version
+
+services:
+  cip:
+    image: ${DOCKER_REGISTRY-}cip
+    build:
+      context: .
+      dockerfile: CIP/Dockerfile
+    ports:
+      - "8080:8080"
+      #- "8081:8081"
+    environment:
+      - ASPNETCORE_HTTPS_PORT=8081
+      - ASPNETCORE_HTTP_PORT=8080
+    entrypoint: ["dotnet", "CIP.dll"]
