@@ -16,6 +16,12 @@ namespace CIP.Controllers
             _customerService = customerService;
         }
 
+        [HttpGet("login")]
+        public async Task<IActionResult> LoginCustomer(string email)
+        {
+            return Ok(await _customerService.LoginCustomer(email));
+        }
+
         [HttpGet("getAllCustomer")]
         public async Task<IActionResult> GetAllCustomer()
         {

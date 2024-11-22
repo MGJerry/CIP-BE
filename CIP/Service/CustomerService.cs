@@ -20,6 +20,12 @@ namespace CIP.Service
         {
             return await repository.GetAllAsync();
         }
+        
+        public async Task<Customer> LoginCustomer(string email)
+        {
+            var customers = await repository.GetAllAsync();
+            return customers.FirstOrDefault(c => c.Email == email);
+        }
 
         public async Task<Customer> GetCustomerById(int Id)
         {

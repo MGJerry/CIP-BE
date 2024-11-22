@@ -1,5 +1,6 @@
 ﻿using CIP.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace CIP.Base
 {
@@ -109,6 +110,11 @@ namespace CIP.Base
         {
             return _context.Set<T>().Find(code);
         }
+
+        /*public T GetByEmail(string Email)
+        {
+            return _context.Set<T>().FirstOrDefault(entity => EF.Property<string>(entity, "Email") == Email);
+        }*/
 
         public async Task<T> GetByIdAsync(string code)
         {

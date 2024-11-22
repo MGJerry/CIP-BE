@@ -1,0 +1,5 @@
+cd .\CIP\
+dotnet publish -o publish --os linux
+cd ..
+cd ..
+scp -i .\login-aws.pem .\CIP\CIP\publish\* ec2-user@ec2-3-25-71-245.ap-southeast-2.compute.amazonaws.com:~/cip
